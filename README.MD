@@ -5,7 +5,7 @@ GG Utils collects utils for daily struggle
 ## Usage
 
 ```js
-var gg = require('ggutils');
+var gg = require('gg-utils');
 
 gg.Newtork.isIPV4("172.19.30.21")); // true
 gg.Newtork.isIPV4("172.19.256.21")); // false
@@ -23,7 +23,7 @@ npm install gg-utils --save
 
 ### Algorithm
 ```js
-var algorithm = require('ggutils').Algorithm;
+var algorithm = require('gg-utils').Algorithm;
 ```
 __quickSort(Array)__
 Sort an array from the minimum to the maximum
@@ -36,7 +36,7 @@ var sortedArray = algorithm.quickSort(array) //sortedArray [0,2,3,4,6,7]
 ### Network
 
 ```js
-var network = require('ggutils').Network;
+var network = require('gg-utils').Network;
 ```
 
 __isIPV4(IPV4)__
@@ -82,7 +82,7 @@ network.simplifyIPV6("2001:0gb8:85a3:0000:0000:8a2e:0370:7334") //false
 
 ### Random
 ```js
-var random = require('ggutils').Random;
+var random = require('gg-utils').Random;
 ```
 __arrayGeneratorInt(min,max,n)__
 Returns a random array of integers. 
