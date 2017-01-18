@@ -7,8 +7,8 @@ GG Utils collects utils for daily struggle
 ```js
 var gg = require('gg-utils');
 
-gg.Newtork.isIPV4("172.19.30.21")); // true
-gg.Newtork.isIPV4("172.19.256.21")); // false
+gg.Network.isIPV4("172.19.30.21")); // true
+gg.Network.isIPV4("172.19.256.21")); // false
 
 var array = [6,3,7,2,4,0]
 var sortedArray = gg.Algorithm.quickSort(array) //sortedArray [0,2,3,4,6,7]
@@ -16,7 +16,7 @@ var sortedArray = gg.Algorithm.quickSort(array) //sortedArray [0,2,3,4,6,7]
 ## Installation
 
 ```sh
-npm install ggutils --save
+npm install gg-utils --save
 ```
 
 ## API Reference
@@ -85,7 +85,7 @@ network.simplifyIPV6("2001:0gb8:85a3:0000:0000:8a2e:0370:7334") //false
 
 ### Random
 ```js
-var random = require('ggutils').Random;
+var random = require('gg-utils').Random;
 ```
 __arrayGeneratorInt(min,max,n)__
 
