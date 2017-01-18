@@ -1,0 +1,23 @@
+{
+  "name": "gg-utils",
+  "version": "0.1.0",
+  "description": "GG Utils collects utils for daily struggle",
+  "main": "index.js",
+  "keywords": [
+    "algorithm",
+    "network",
+    "random",
+    "util"
+  ],
+  "scripts": {
+    "test": "tape -r . tests/**/*.js"
+  },
+  "author": {
+    "name": "Roberto Russo",
+    "email": "rob.robertorusso@gmail.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^4.6.3"
+  }
+}
