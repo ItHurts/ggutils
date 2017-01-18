@@ -16,7 +16,7 @@ var sortedArray = gg.Algorithm.quickSort(array) //sortedArray [0,2,3,4,6,7]
 ## Installation
 
 ```sh
-npm install ggutils --save
+npm install gg-utils --save
 ```
 
 ## API Reference
