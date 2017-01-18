@@ -9,7 +9,7 @@ var Algorithm = function () {};
  * @returns {Array} Returns the sorted array
  */
 Algorithm.prototype.quickSort = function (array) {
-    return quickSort(array,0,array.length-1)
+    return quickSort(array, 0, array.length - 1)
 }
 
 function quickSort(array, lo, hi) {
@@ -38,4 +38,40 @@ function partion(array, lo, hi) {
     array[hi] = temp;
     return i;
 }
+
+/**
+ * Produces an array with all primes not greater than n
+ * @param {number} n Maximum possible prime (providing 10, the greatest prime number is 7)
+ * @return {Array|boolean}
+ */
+Algorithm.prototype.sieveOfEratosthenes = function (n) {
+    if (n > 1) {
+        var support = []
+        for (var i = 0; i < n; i++) support.push(true)
+        for (var i = 2; i < Math.sqrt(n); i++) {
+            if (support[i]) {
+                var j = 0;
+                var k = 1;
+                while (j < n) {
+                    if (j == 0) {
+                        j = Math.pow(i, 2)
+                        support[j] = false
+                    }
+                    j = Math.pow(i, 2) + k * i
+                    if (j < n) {
+                        support[j] = false
+                        k++
+                    }
+                }
+            }
+        }
+        var primes = []
+        for (var i = 0; i < n; i++)
+            if (support[i]) primes.push(i)
+        return primes
+    } else return false
+}
+
+
+
 exports.Algorithm = new Algorithm();

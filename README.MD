@@ -27,12 +27,23 @@ npm install gg-utils --save
 var algorithm = require('gg-utils').Algorithm;
 ```
 __quickSort(Array)__
+
 Sort an array from the minimum to the maximum
+Reference: https://en.wikipedia.org/wiki/Quicksort
 
 ```js
 var array = [6,3,7,2,4,0]
 var sortedArray = gg.Algorithm.quickSort(array) 
 console.log(sortedArray) // [0,2,3,4,6,7]
+```
+__sieveOfEratosthenes(n)__
+
+Produces an array with all primes not greater than n.
+Reference: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+```js
+console.log(gg.Algorithm.quickSort(10)) // [0,1,2,3,5,7]
+console.log(gg.Algorithm.quickSort(30)) // [0,1,2,3,5,7,11,13,17,19,23,29]
+console.log(gg.Algorithm.quickSort(1)) // false
 ```
 
 ### Network
@@ -68,7 +79,6 @@ console.log(network.isIPV6("2001:0db8:85a3:0000:0000:8a2e:0370:7334")) //true
 console.log(network.isIPV6("2001:db8:85a3:0:0:8a2e:370:7334")) //true
 console.log(network.isIPV6("::ffff:192.168.89.9")) //true
 console.log(network.isIPV6("fec0::/10", true)) //true
-
 console.log(network.isIPV6("2001:0gb8:85a3:0000:0000:8a2e:0370:7334")) //false
 console.log(network.isIPV6("192.168.89.9")) //false
 ```
@@ -81,7 +91,6 @@ Simpliefies a valid IPV6.
 console.log(network.simplifyIPV6("2001:0db8:0000:0000:0000:0000:1428:57ab")) //2001:db8::1428:57ab
 console.log(network.simplifyIPV6("2001:0db8:85a3:0:1319:8a2e:0370:7344")) //2001:db8:85a3::1319:8a2e:370:7344
 console.log(network.simplifyIPV6("0000:0000:0000:0000:0000:0000:0000:0001")) //::1
-
 console.log(network.simplifyIPV6("2001:0gb8:85a3:0000:0000:8a2e:0370:7334")) //false
 ```
 
