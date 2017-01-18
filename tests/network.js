@@ -1,4 +1,4 @@
-var network = require('../').Newtork
+var network = require('../').Network
 var test = require('tape')
 
 

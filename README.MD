@@ -16,7 +16,7 @@ var sortedArray = gg.Algorithm.quickSort(array) //sortedArray [0,2,3,4,6,7]
 ## Installation
 
 ```sh
-npm install gg-utils --save
+npm install ggutils --save
 ```
 
 ## API Reference
@@ -40,6 +40,7 @@ var network = require('gg-utils').Network;
 ```
 
 __isIPV4(IPV4)__
+
 Checks if the string provided is a valid IPV4
 
 ```js
@@ -48,6 +49,7 @@ network.isIPV4("192.168.4.256") //false
 ```
 
 __isIPV6(IPV6, specialCheck = false)__
+
 Checks if the string provided is a valid IPV6.
 If specialCheck is true (default is false), the following IPV6 address will be treated as valid:
 * ::/128
@@ -70,21 +72,23 @@ network.isIPV6("192.168.89.9") //false
 ```
 
 __simplifyIPV6(IPV6)__
+
 Simpliefies a valid IPV6.
 
 ```js
 network.simplifyIPV6("2001:0db8:0000:0000:0000:0000:1428:57ab") //2001:db8::1428:57ab
 network.simplifyIPV6("2001:0db8:85a3:0:1319:8a2e:0370:7344") //2001:db8:85a3::1319:8a2e:370:7344
-network.simplifyIPV6("0000:0000:0000:0000:0000:0000:0000:0001") //::1e
+network.simplifyIPV6("0000:0000:0000:0000:0000:0000:0000:0001") //::1
 
 network.simplifyIPV6("2001:0gb8:85a3:0000:0000:8a2e:0370:7334") //false
 ```
 
 ### Random
 ```js
-var random = require('gg-utils').Random;
+var random = require('ggutils').Random;
 ```
 __arrayGeneratorInt(min,max,n)__
+
 Returns a random array of integers. 
 * min is minimum value
 * max is the maximum value
@@ -98,7 +102,9 @@ random.arrayGeneratorInt(-30,30,10000001) //false
 ```
 
 __getRandomIntInclusive(min,max)__
+
 Returns a random integer between min and max (both inclusive)
+
 ```js
 random.arrayGeneratorInt(0,10) //4
 random.arrayGeneratorInt(0,10) //10
