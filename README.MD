@@ -26,24 +26,114 @@ npm install gg-utils --save
 ```js
 var algorithm = require('gg-utils').Algorithm;
 ```
-__quickSort(Array)__
 
-Sort an array from the minimum to the maximum
+__bubbleSort(array)__
+
+Sorts an array from the minimum to the maximum.
+
+Reference: https://en.wikipedia.org/wiki/Bubble_sort
+
+
+```js
+var array = [3,7,1,2,5,8,12]
+console.log(algorithm.bubbleSort(array)) [1,2,3,5,7,8,12]
+```
+
+__cocktailShakerSort(array)__
+
+Sorts an array from the minimum to the maximum.
+
+Reference: https://en.wikipedia.org/wiki/Cocktail_shaker_sort
+
+
+```js
+var array = [3,7,1,2,5,8,12]
+console.log(algorithm.cocktailShakerSort(array)) [1,2,3,5,7,8,12]
+```
+
+__combSort(array)__
+
+Sorts an array from the minimum to the maximum.
+
+Reference: https://en.wikipedia.org/wiki/Comb_sort
+
+
+```js
+var array = [3,7,1,2,5,8,12]
+console.log(algorithm.combSort(array)) [1,2,3,5,7,8,12]
+```
+
+__fibonacciNumber(n)__
+
+ Returns the nth fibonacci number.
+
+ Reference: https://en.wikipedia.org/wiki/Fibonacci_number
+
+```js
+console.log(algorithm.fibonacciNumber(20)) //6765
+console.log(algorithm.fibonacciNumber(40)) //102334155
+```
+
+__fibonacciNumberRecursive(n)__
+
+ Returns the nth fibonacci number using the recursive algorithm (slower than the iterative).
+
+ Reference: https://en.wikipedia.org/wiki/Fibonacci_number
+
+```js
+console.log(algorithm.fibonacciNumberRecursive(20)) //6765
+console.log(algorithm.fibonacciNumberRecursive(40)) //102334155
+```
+
+__quickSort(array)__
+
+Sorts an array from the minimum to the maximum.
+
 Reference: https://en.wikipedia.org/wiki/Quicksort
 
 ```js
 var array = [6,3,7,2,4,0]
-var sortedArray = gg.Algorithm.quickSort(array) 
+var sortedArray = algorithm.quickSort(array) 
 console.log(sortedArray) // [0,2,3,4,6,7]
 ```
 __sieveOfEratosthenes(n)__
 
 Produces an array with all primes not greater than n.
+
 Reference: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 ```js
-console.log(gg.Algorithm.quickSort(10)) // [0,1,2,3,5,7]
-console.log(gg.Algorithm.quickSort(30)) // [0,1,2,3,5,7,11,13,17,19,23,29]
-console.log(gg.Algorithm.quickSort(1)) // false
+console.log(algorithm.quickSort(10)) // [0,1,2,3,5,7]
+console.log(algorithm.quickSort(30)) // [0,1,2,3,5,7,11,13,17,19,23,29]
+console.log(algorithm.quickSort(1)) // false
+```
+
+__trialDivision(n)__
+
+Produces an array with prime factors of n.
+
+Reference: https://en.wikipedia.org/wiki/Trial_division
+```js
+console.log(algorithm.trialDivision(12)) // [2,2,3]
+console.log(algorithm.trialDivision(17)) // [17]
+console.log(algorithm.trialDivision(784)) // [2,2,2,2,7,7]
+```
+
+### Date
+```js
+var date = require('gg-utils').Date;
+```
+
+__isLeapYear(year)__
+
+Checks if year is a leap year.
+
+Reference: https://en.wikipedia.org/wiki/Leap_year
+
+```js
+console.log(gg.Date.isLeapYear(2012)) //true
+console.log(gg.Date.isLeapYear(2013)) //false
+console.log(gg.Date.isLeapYear(2016)) //true
+console.log(gg.Date.isLeapYear(2017)) //false
 ```
 
 ### Network
@@ -52,9 +142,18 @@ console.log(gg.Algorithm.quickSort(1)) // false
 var network = require('gg-utils').Network;
 ```
 
+__isMACAddress(MAC)__
+
+Checks if the string provided is a valid MAC address.
+
+```js
+console.log(network.isMACAddress("01-23-45-67-89-AB")) //true
+console.log(network.isMACAddress("G1-23-45-67-89-AB")) //false
+```
+
 __isIPV4(IPV4)__
 
-Checks if the string provided is a valid IPV4
+Checks if the string provided is a valid IPV4.
 
 ```js
 console.log(network.isIPV4("172.19.2.4")) //true

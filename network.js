@@ -1,6 +1,20 @@
 var Network = function () {};
 
 /**
+ * Checks if the string provided is a valid MAC address
+ * 
+ * @param {string} MAC The address to validate
+ * @returns {boolean} Returns true if the address is valid, false otherwise
+ */
+Network.prototype.isMACAddress = function (MAC) {
+    var re = /([0-9a-f]{2})(\-)([0-9a-f]{2})(\-)([0-9a-f]{2})(\-)([0-9a-f]{2})(\-)([0-9a-f]{2})(\-)([0-9a-f]{2})/gi
+    var reneg = /[0-9a-f]{3,}/gi
+
+    if (re.test(MAC) && !reneg.test(MAC)) return true
+    else return false
+}
+
+/**
  * Checks if the string provided is a valid IPV4
  * 
  * @param {string} IPV4 The address to validate

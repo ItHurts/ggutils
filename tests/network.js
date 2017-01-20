@@ -2,6 +2,33 @@ var network = require('../').Network
 var test = require('tape')
 
 
+test('Network | MAC address test valid MAC', function (t) {
+    t.deepEqual(network.isMACAddress("01-23-45-67-89-AB"), true);
+    t.deepEqual(network.isMACAddress("A1-23-45-67-89-AB"), true);
+    t.deepEqual(network.isMACAddress("A1-23-45-67-89-AB".toLowerCase()), true);
+
+    t.end()
+});
+
+test('Network | MAC address test invalid MAC', function (t) {
+    t.deepEqual(network.isMACAddress("12"), false);
+    t.deepEqual(network.isMACAddress("12-34"), false);
+    t.deepEqual(network.isMACAddress("12-34-56"), false);
+    t.deepEqual(network.isMACAddress("12-34-56-78"), false);
+    t.deepEqual(network.isMACAddress("12-34-56-78-90"), false);
+    t.deepEqual(network.isMACAddress("1-23-45-67-89-AB"), false);
+    t.deepEqual(network.isMACAddress("G1-23-45-67-89-AB"), false);
+    t.deepEqual(network.isMACAddress("G1-23 -45-67-89-AB"), false);
+    t.deepEqual(network.isMACAddress("123-23-45-67-89-AB"), false);
+    t.deepEqual(network.isMACAddress("13-23-45-67-89-ABaa"), false);
+    t.deepEqual(network.isMACAddress(null), false);
+    t.deepEqual(network.isMACAddress(undefined), false);
+    t.deepEqual(network.isMACAddress(""), false);
+    t.deepEqual(network.isMACAddress(" "), false);
+
+    t.end()
+});
+
 test('Network | IPV4 test valid IP', function (t) {
     t.deepEqual(network.isIPV4("1.1.1.1"), true);
     t.deepEqual(true, network.isIPV4("1.11.111.255"));
