@@ -3,8 +3,8 @@ var Algorithm = function () {};
 /**
  * Sort an array from lowest to the highest value
  * 
- * @param {Array} array Array to sort
- * @return {Array} Returns the sorted array
+ * @param   {Array} array Array to sort
+ * @return  {Array} Returns the sorted array
  */
 Algorithm.prototype.bubbleSort = function (array) {
     var n = array.length
@@ -12,9 +12,9 @@ Algorithm.prototype.bubbleSort = function (array) {
         var newn = 0;
         for (var i = 1; i < n; i++) {
             if (array[i - 1] > array[i]) {
-                var support = array[i - 1]
+                var temp = array[i - 1]
                 array[i - 1] = array[i]
-                array[i] = support
+                array[i] = temp
                 newn = i
             }
         }
@@ -26,17 +26,17 @@ Algorithm.prototype.bubbleSort = function (array) {
 /**
  * Sort an array from lowest to the highest value
  * 
- * @param {Array} array Array to sort
- * @return {Array} Returns the sorted array
+ * @param   {Array} array Array to sort
+ * @return  {Array} Returns the sorted array
  */
 Algorithm.prototype.cocktailShakerSort = function (array) {
     do {
         var swapped = false
         for (var i = 0; i < array.length; i++) {
             if (array[i] > array[i + 1]) {
-                var support = array[i]
+                var temp = array[i]
                 array[i] = array[i + 1]
-                array[i + 1] = support
+                array[i + 1] = temp
                 swapped = true
             }
         }
@@ -44,9 +44,9 @@ Algorithm.prototype.cocktailShakerSort = function (array) {
         swapped = true
         for (var i = array.length - 1; i >= 0; i--) {
             if (array[i] > array[i + 1]) {
-                var support = array[i]
+                var temp = array[i]
                 array[i] = array[i + 1]
-                array[i + 1] = support
+                array[i + 1] = temp
                 swapped = true
             }
         }
@@ -58,8 +58,8 @@ Algorithm.prototype.cocktailShakerSort = function (array) {
 /**
  * Sort an array from lowest to the highest value
  * 
- * @param {Array} array Array to sort
- * @return {Array} Returns the sorted array
+ * @param   {Array} array Array to sort
+ * @return  {Array} Returns the sorted array
  */
 Algorithm.prototype.combSort = function (array) {
     var gap = array.length
@@ -75,9 +75,9 @@ Algorithm.prototype.combSort = function (array) {
         var i = 0;
         while (i + gap < array.length) {
             if (array[i] > array[i + gap]) {
-                var support = array[i]
+                var temp = array[i]
                 array[i] = array[i + gap]
-                array[i + gap] = support
+                array[i + gap] = temp
             }
             i++;
         }
@@ -88,8 +88,8 @@ Algorithm.prototype.combSort = function (array) {
 /**
  * Returns the nth fibonacci number
  * 
- * @param {number} n Length of the sequence
- * @return {Array}
+ * @param   {number} n Length of the sequence
+ * @return  {Array}
  */
 Algorithm.prototype.fibonacciNumber = function (n) {
     var a = 1,
@@ -110,8 +110,29 @@ Algorithm.prototype.fibonacciNumberRecursive = function (n) {
 /**
  * Sort an array from lowest to the highest value
  * 
- * @param {Array} array Array to sort
- * @return {Array} Returns the sorted array
+ * @param   {Array} array Array to sort
+ * @return  {Array} Returns the sorted array
+ */
+Algorithm.prototype.gnomeSort = function (array) {
+    var i = 0;
+    while (i < array.length) {
+        if (i == 0 || array[i] >= array[i - 1]) {
+            i++
+        } else {
+            var temp = array[i]
+            array[i] = array[i - 1]
+            array[i - 1] = temp
+            i--
+        }
+    }
+    return array
+}
+
+/**
+ * Sort an array from lowest to the highest value
+ * 
+ * @param   {Array} array Array to sort
+ * @return  {Array} Returns the sorted array
  */
 Algorithm.prototype.quickSort = function (array) {
     return quickSort(array, 0, array.length - 1)
@@ -120,10 +141,10 @@ Algorithm.prototype.quickSort = function (array) {
 /**
  * Sort an array from lowest to the highest value
  * 
- * @param {Array} array Array to sort
- * @param {number} lo First position of the array, generally 0
- * @param {number} hi Last position of the array
- * @return {Array} Returns the sorted array
+ * @param   {Array}     array Array to sort
+ * @param   {number}    lo First position of the array, generally 0
+ * @param   {number}    hi Last position of the array
+ * @return  {Array}     Returns the sorted array
  */
 function quickSort(array, lo, hi) {
     if (!array) return []
@@ -155,8 +176,8 @@ function partion(array, lo, hi) {
 /**
  * Produces an array with all primes not greater than n
  * 
- * @param {number} n Maximum possible prime (providing 10, the greatest prime number is 7)
- * @return {Array|boolean}
+ * @param   {number}        n Maximum possible prime (providing 10, the greatest prime number is 7)
+ * @return  {Array|boolean}
  */
 Algorithm.prototype.sieveOfEratosthenes = function (n) {
     if (n > 1) {
@@ -189,8 +210,8 @@ Algorithm.prototype.sieveOfEratosthenes = function (n) {
 /**
  * Produces an array with prime factors of n
  * 
- * @param {number} n
- * @return {Array}
+ * @param   {number} n
+ * @return  {Array}
  */
 Algorithm.prototype.trialDivision = function (n) {
     if (n < 2) return []
@@ -201,11 +222,12 @@ Algorithm.prototype.trialDivision = function (n) {
             primeFactors.push(p);
             n = n / p
         }
-
     });
     if (n > 1) primeFactors.push(n);
     return primeFactors
 }
+
+
 
 
 exports.Algorithm = new Algorithm();

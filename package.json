@@ -2,7 +2,7 @@
   "name": "gg-utils",
   "version": "0.2.0",
   "description": "GG Utils collects utils for daily struggle",
-  "main": "./index.js",
+  "main": "./src/index.js",
   "keywords": [
     "algorithm",
     "date",
@@ -11,7 +11,11 @@
     "util"
   ],
   "scripts": {
-    "test": "tape -r . tests/**/*.js"
+    "test": "tape -r . tests/**/*.js",
+    "precommit": "npm test",
+    "build": "npm run build-tsc && npm run uglify", 
+    "build-tsc": "tsc -p .",
+    "uglify": "uglifyjs lib/*.js -o lib/index.js -b && uglifyjs lib/index.js -o lib/index.min.js"
   },
   "author": {
     "name": "Roberto Russo",
@@ -24,6 +28,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "tape": "^4.6.3"
+    "tape": "^4.6.3",
+    "tslint": "^4.3.1",
+    "typescript": "^2.1.5",
+    "uglify-js": "^2.7.5"
+  },
+  "bugs": {
+    "url": "https://github.com/ItHurts/ggutils/issues"
   }
 }
