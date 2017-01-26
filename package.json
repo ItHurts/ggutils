@@ -13,9 +13,8 @@
   "scripts": {
     "test": "tape -r . tests/**/*.js",
     "precommit": "npm test",
-    "build": "npm run build-tsc && npm run uglify", 
-    "build-tsc": "tsc -p .",
-    "uglify": "uglifyjs lib/*.js -o lib/index.js -b && uglifyjs lib/index.js -o lib/index.min.js"
+    "build": "tsc -p .",
+    "stest": "npm run build && node test.js"
   },
   "author": {
     "name": "Roberto Russo",
