@@ -14,10 +14,12 @@ class Date {
     }
 
     /**
-     * Returns an object with the fields: days, hours, minutes and seconds
+     * Returns an object with the fields: days, hours, minutes and seconds of the time difference
+     * between from and to
      * 
-     * @param   {Date}  from   Starting date
-     * @param   {Date}  to     End date
+     * @param   {Date}      from   Starting date
+     * @param   {Date}      to     End date
+     * @param   {boolean}   [timezone=false] 
      * @return  {Object}
      */
     public timeDiff(from, to, timezone = false) {
