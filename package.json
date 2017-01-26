@@ -1,17 +1,21 @@
 {
   "name": "gg-utils",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "GG Utils collects utils for daily struggle",
-  "main": "./index.js",
+  "main": "./dist/index.js",
   "keywords": [
     "algorithm",
     "date",
     "network",
     "random",
+    "time",
     "util"
   ],
   "scripts": {
-    "test": "tape -r . tests/**/*.js"
+    "test": "npm run build && tape -r . test/**/*.js",
+    "precommit": "npm test",
+    "build": "tsc -p .",
+    "stest": "npm run build && node temp.js"
   },
   "author": {
     "name": "Roberto Russo",
@@ -24,6 +28,11 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "tape": "^4.6.3"
+    "tape": "^4.6.3",
+    "tslint": "^4.3.1",
+    "typescript": "^2.1.5"
+  },
+  "bugs": {
+    "url": "https://github.com/ItHurts/ggutils/issues"
   }
 }

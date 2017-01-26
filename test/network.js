@@ -1,4 +1,4 @@
-var network = require('../').Network
+var network = require('../dist').Network
 var test = require('tape')
 
 
@@ -20,6 +20,7 @@ test('Network | MAC address test invalid MAC', function (t) {
     t.deepEqual(network.isMACAddress("G1-23-45-67-89-AB"), false);
     t.deepEqual(network.isMACAddress("G1-23 -45-67-89-AB"), false);
     t.deepEqual(network.isMACAddress("123-23-45-67-89-AB"), false);
+    t.deepEqual(network.isMACAddress("01-23-45-67-89:AB"), false);
     t.deepEqual(network.isMACAddress("13-23-45-67-89-ABaa"), false);
     t.deepEqual(network.isMACAddress(null), false);
     t.deepEqual(network.isMACAddress(undefined), false);
