@@ -1,3 +1,5 @@
 node_modules/*
-test.js
+temp.js
 npm-debug.log
+dist/*
+.vscode/*

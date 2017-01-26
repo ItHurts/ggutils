@@ -1,4 +1,4 @@
-var network = require('../').Network
+var network = require('../dist').Network
 var test = require('tape')
 
 

@@ -1,4 +1,4 @@
-var date = require('../').Date
+var date = require('../dist').Date
 var test = require('tape')
 
 

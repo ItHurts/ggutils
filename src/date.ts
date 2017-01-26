@@ -7,10 +7,10 @@ class Date {
      * @return  {boolean}
      */
     public isLeapYear(year: number) {
-        if (year % 4 != 0) return false
-        else if (year % 100 != 0) return true
-        else if (year % 400 != 0) return false
-        else return true
+        if (year % 4 !== 0) return false;
+        else if (year % 100 !== 0) return true;
+        else if (year % 400 !== 0) return false;
+        else return true;
     }
 
     /**
@@ -26,36 +26,35 @@ class Date {
             hours: this.timeDiffHours(from, to, timezone),
             minutes: this.timeDiffMinutes(from, to, timezone),
             seconds: this.timeDiffSeconds(from, to, timezone)
-        }
+        };
     }
 
     private timeDiffDays(from, to, timezone = false) {
-        return Math.floor(((this.getDiffMilliseconds(from, to, timezone)) / (1000 * 60 * 60 * 24)))
+        return Math.floor(((this.getDiffMilliseconds(from, to, timezone)) / (1000 * 60 * 60 * 24)));
     }
-    
 
     private timeDiffHours(from, to, timezone = false) {
-        return Math.floor(((this.getDiffMilliseconds(from, to, timezone)) / (1000 * 60 * 60) % 24))
+        return Math.floor(((this.getDiffMilliseconds(from, to, timezone)) / (1000 * 60 * 60) % 24));
     }
 
     private timeDiffMinutes(from, to, timezone = false) {
-        return Math.floor(((this.getDiffMilliseconds(from, to, timezone)) / (1000 * 60) % 60))
+        return Math.floor(((this.getDiffMilliseconds(from, to, timezone)) / (1000 * 60) % 60));
     }
 
     private timeDiffSeconds(from, to, timezone = false) {
-        return Math.floor(((this.getDiffMilliseconds(from, to, timezone)) / (1000) % 60))
+        return Math.floor(((this.getDiffMilliseconds(from, to, timezone)) / (1000) % 60));
     }
 
     private calcTimeZoneMilliseconds(from, to) {
-        return (to.getTimezoneOffset() - from.getTimezoneOffset()) * 60 * 1000
+        return (to.getTimezoneOffset() - from.getTimezoneOffset()) * 60 * 1000;
     }
 
     private getDiffMilliseconds(from, to, timezone) {
-        return to.getTime() - from.getTime() - ((!timezone) ? this.calcTimeZoneMilliseconds(from, to) : 0)
+        return to.getTime() - from.getTime() - ((!timezone) ? this.calcTimeZoneMilliseconds(from, to) : 0);
     }
 }
 
-var date = new Date()
+let date = new Date();
 
 export {
     date as Date

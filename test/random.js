@@ -1,4 +1,4 @@
-var random = require('../').Random
+var random = require('../dist').Random
 var test = require('tape')
 
 

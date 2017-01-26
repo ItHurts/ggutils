@@ -140,10 +140,18 @@ Checks if year is a leap year.
 Reference: https://en.wikipedia.org/wiki/Leap_year
 
 ```js
-console.log(gg.Date.isLeapYear(2012))   //true
-console.log(gg.Date.isLeapYear(2013))   //false
-console.log(gg.Date.isLeapYear(2016))   //true
-console.log(gg.Date.isLeapYear(2017))   //false
+console.log(date.isLeapYear(2012))   //true
+console.log(date.isLeapYear(2013))   //false
+console.log(date.isLeapYear(2016))   //true
+console.log(date.isLeapYear(2017))   //false
+```
+
+__timeDiff(from, to[,timezone])__
+
+Returns an object with the fields: days, hours, minutes and seconds of the time difference between from and to
+```js
+console.log(date.timeDiff(new Date(2015, 5, 1, 22, 14, 7),new Date(2018, 8, 17, 15, 8, 32))) // {days: 1203, hours: 16, minutes: 54,seconds: 25}
+console.log(gg.Date.timeDiff(new Date(2015, 1, 1, 22, 14, 7),new Date(2018, 8, 17, 15, 8, 32), true)) //{days: 1323, hours: 15, minutes: 54, seconds: 25}
 ```
 
 ### Network
@@ -170,7 +178,7 @@ console.log(network.isIPV4("172.19.2.4"))       // true
 console.log(network.isIPV4("192.168.4.256"))    // false
 ```
 
-__isIPV6(IPV6, specialCheck = false)__
+__isIPV6(IPV6[,specialCheck])__
 
 Checks if the string provided is a valid IPV6.
 If specialCheck is true (default is false), the following IPV6 address will be treated as valid:
