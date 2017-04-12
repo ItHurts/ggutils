@@ -151,7 +151,7 @@ __timeDiff(from, to[,timezone])__
 Returns an object with the fields: days, hours, minutes and seconds of the time difference between from and to
 ```js
 console.log(date.timeDiff(new Date(2015, 5, 1, 22, 14, 7),new Date(2018, 8, 17, 15, 8, 32))) // {days: 1203, hours: 16, minutes: 54,seconds: 25}
-console.log(gg.Date.timeDiff(new Date(2015, 1, 1, 22, 14, 7),new Date(2018, 8, 17, 15, 8, 32), true)) //{days: 1323, hours: 15, minutes: 54, seconds: 25}
+console.log(date.timeDiff(new Date(2015, 1, 1, 22, 14, 7),new Date(2018, 8, 17, 15, 8, 32), true)) //{days: 1323, hours: 15, minutes: 54, seconds: 25}
 ```
 
 ### Network
